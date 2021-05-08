@@ -1,0 +1,153 @@
+/* CSS variables here */
+:root {
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --bg-color: #fff;
+  --font-color: #000;
+  --heading-color: #000;
+  --card-bg: #fff;
+
+  /* color variants */
+  --blood-red: #FF073A;
+  --cold-blue: #057EFF;
+  --nice-green: #2AA846;
+
+  /* slider */
+  --slider-color: #ccc;
+}
+
+/* dark theme variables here */
+[data-theme="dark"] {
+  --bg-color: #000;
+  --font-color: #fff;
+  --card-bg: #333;
+}
+
+/* global styles */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: all 0.3s ease-out;
+}
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--slider-color);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .2s;
+}
+
+.slider:before {
+  background-color: var(--bg-color);
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  background-color: var(--font-color);
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.container {
+  height: 80%;
+}
+
+.container .strong {
+  border-bottom: 4px solid var(--font-color);
+}
+
+.container .row {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80%;
+}
+
+/* card styles */
+.card {
+  padding: 20px;
+  border: 1px solid var(--card-border-color);
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--card-bg);
+}
+
+.card:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* card variants */
+.card.card--red {
+  border-bottom: 4px solid var(--blood-red);
+}
+
+.card.card--blue {
+
+  border-bottom: 4px solid var(--cold-blue);
+}
+
+.card.card--green {
+
+  border-bottom: 4px solid var(--nice-green);
+}
+
+/* footer styles */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  width: 100%;
+}
